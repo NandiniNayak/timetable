@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170117022338) do
+ActiveRecord::Schema.define(version: 20170214025128) do
+
+  create_table "time_tables", force: :cascade do |t|
+    t.string   "week"
+    t.date     "date"
+    t.string   "day"
+    t.time     "start_time"
+    t.time     "end_time"
+    t.string   "period"
+    t.string   "room_number"
+    t.string   "subject"
+    t.string   "teacher"
+    t.string   "equipment"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["user_id"], name: "index_time_tables_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
