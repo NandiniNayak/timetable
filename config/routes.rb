@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'alert/page'
+
   resources :time_tables
   root 'home#page'
 

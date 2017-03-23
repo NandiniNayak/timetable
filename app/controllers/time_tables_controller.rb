@@ -25,6 +25,7 @@ class TimeTablesController < ApplicationController
   # POST /time_tables.json
   def create
     @time_table = TimeTable.new(time_table_params)
+    @time_table.user_id = current_user.id
 
     respond_to do |format|
       if @time_table.save

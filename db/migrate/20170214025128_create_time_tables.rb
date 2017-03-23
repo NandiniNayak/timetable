@@ -11,7 +11,7 @@ class CreateTimeTables < ActiveRecord::Migration[5.0]
       t.string :subject
       t.string :teacher
       t.string :equipment
-      t.references :user, foreign_key: true
+      t.references :user, foreign_key: true, unqiue: true
 
       t.timestamps
     end
